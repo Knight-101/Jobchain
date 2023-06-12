@@ -42,6 +42,8 @@ export default async function Dashboard({
         if (res.body.data) {
             toast.success("Transaction Successfull!");
             router.refresh();
+        } else {
+            toast.error("Something went wrong!");
         }
     };
     function onSubmit(e: React.FormEvent<HTMLFormElement>) {

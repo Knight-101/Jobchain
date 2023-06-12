@@ -20,7 +20,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     }
     return NextResponse.json({ data, status: 204 })
   } catch (e) {
-    return NextResponse.json({ status: 500 });
+    return NextResponse.json({error:e, status: 500 });
   }
 }
 

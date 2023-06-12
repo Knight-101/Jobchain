@@ -1,7 +1,9 @@
 import { toast } from "react-toastify";
 import { User } from "./types";
 
-const endpoint = "http://localhost:3000/api/jobcoin";
+const domain:string = process.env.NEXT_PUBLIC_VERCEL_URL ?? "http://localhost:3000"
+
+const endpoint:string = domain + "/api/jobcoin";
 
 interface UserResponseBody {
     data: any;
