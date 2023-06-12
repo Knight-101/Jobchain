@@ -61,7 +61,6 @@ export default async function TransactionChart({
 }: {
     params: { user: string };
 }) {
-    console.log(params);
     const txns = await getTransactions<TransactionsResponse[]>({
         headers: { address: params.user },
         cache: "no-store",

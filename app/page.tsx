@@ -25,9 +25,8 @@ export default function Home() {
     });
 
     if (user) {
-      toast.success("Logged in successfully")
       push(`/${userAdd}`)
-
+      toast.success("Logged in successfully")
     } else {
       toast.error("Invalid Address")
     }

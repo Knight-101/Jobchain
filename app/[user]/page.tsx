@@ -40,8 +40,8 @@ export default async function Dashboard({
             txn: txnObject,
         });
         if (res.body.data) {
-            toast.success("Transaction Successfull!");
             router.refresh();
+            toast.success("Transaction Successfull!");
         } else {
             toast.error("Something went wrong!");
         }
