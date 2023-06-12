@@ -1,6 +1,7 @@
 "use client"
 import './globals.css'
 import { Inter } from 'next/font/google'
+import { Suspense } from 'react';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -19,9 +20,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ToastContainer />
-        <div className='font-mono pt-10 text-5xl'>JobChain</div>
-        {children}
+        <Suspense>
+          <ToastContainer />
+          <div className='font-mono pt-10 text-5xl'>JobChain</div>
+          {children}
+        </Suspense>
       </body>
     </html>
   )

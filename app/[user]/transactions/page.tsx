@@ -11,6 +11,7 @@ import {
     Legend,
 } from "chart.js";
 import "chartjs-adapter-date-fns";
+import { Suspense } from "react";
 import { Line } from "react-chartjs-2";
 
 ChartJS.register(
@@ -79,8 +80,10 @@ export default async function TransactionChart({
     };
 
     return (
-        <div className="sm:w-1/2 w-full p-2 sm:p-8 effect absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-            <Line options={options} data={data} />
-        </div>
+        <Suspense>
+            <div className="sm:w-1/2 w-full p-2 sm:p-8 effect absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                <Line options={options} data={data} />
+            </div>
+        </Suspense>
     );
 }
